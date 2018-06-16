@@ -1,3 +1,4 @@
+/* eslint-disable react/no-did-mount-set-state */
 /**
  *
  * NavBar
@@ -7,12 +8,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import STATUS from 'gitstar-components/status';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/es/IconButton/IconButton';
 import AccountCircle from '@material-ui/icons/es/AccountCircle';
-import Button from '@material-ui/core/es/Button/Button';
+import SignIn from '../SignIn';
+import SignUp from '../SignUp';
 
 
 const styles = (theme) => ({
@@ -30,8 +33,48 @@ const styles = (theme) => ({
 });
 
 class NavBar extends Component { // eslint-disable-line react/prefer-stateless-function
+  state = {
+    status: STATUS.INITIAL,
+    token: null,
+  };
+
+  componentDidMount() {
+    const code =
+      window.location.href.match(/\?code=(.*)/) &&
+      window.location.href.match(/\?code=(.*)/)[1];
+
+    if (code) {
+      this.setState({ status: STATUS.LOADING });
+      fetch(`http://localhost:3000/authenticate/${code}`)
+        .then((response) => response.json())
+        .then(({ token }) => {
+          this.setState({
+            token,
+            status: STATUS.FINISHED_LOADING,
+          });
+        });
+    }
+  }
+
   render() {
     const { classes } = this.props;
+
+    let authenticated;
+    if (this.state.status === STATUS.AUTHENTICATED) {
+      authenticated = (
+        <div>
+          <IconButton color="inherit">
+            <AccountCircle />
+          </IconButton>
+        </div>
+      );
+    } else {
+      authenticated = (
+        <div>
+          <SignIn /> or <SignUp />
+        </div>
+      );
+    }
 
     return (
       <AppBar position="static" elevation={0}>
@@ -40,10 +83,7 @@ class NavBar extends Component { // eslint-disable-line react/prefer-stateless-f
             GitLand
           </Typography>
           <div>
-            <IconButton color="inherit">
-              <AccountCircle />
-            </IconButton>
-            <Button color="inherit">Sign In</Button> or <Button color="inherit">Sign Up</Button>
+            {authenticated}
           </div>
         </Toolbar>
       </AppBar>

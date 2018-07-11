@@ -8,12 +8,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import STATUS from 'gitstar-components/status';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/es/IconButton/IconButton';
 import AccountCircle from '@material-ui/icons/es/AccountCircle';
+import STATUS from '../AuthState';
 import SignIn from '../AuthButtons/signIn';
 import SignUp from '../AuthButtons/signUp';
 

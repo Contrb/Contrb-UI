@@ -1,7 +1,13 @@
 // import React from 'react';
 // import { shallow } from 'enzyme';
 
-// import SignUp from '../index';
+// import SignIn from '../index';
+
+describe('<SignIn />', () => {
+  it('Expect to have unit tests specified', () => {
+    expect(true).toEqual(false);
+  });
+});
 
 describe('<SignUp />', () => {
   it('Expect to have unit tests specified', () => {

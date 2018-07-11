@@ -14,8 +14,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/es/IconButton/IconButton';
 import AccountCircle from '@material-ui/icons/es/AccountCircle';
-import SignIn from '../SignIn';
-import SignUp from '../SignUp';
+import SignIn from '../AuthButtons/signIn';
+import SignUp from '../AuthButtons/signUp';
 
 
 const styles = (theme) => ({

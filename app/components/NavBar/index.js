@@ -13,7 +13,6 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/es/IconButton/IconButton';
 import AccountCircle from '@material-ui/icons/es/AccountCircle';
-import STATUS from '../AuthState';
 import SignIn from '../AuthButtons/signIn';
 import SignUp from '../AuthButtons/signUp';
 
@@ -33,34 +32,19 @@ const styles = (theme) => ({
 });
 
 class NavBar extends Component { // eslint-disable-line react/prefer-stateless-function
-  state = {
-    status: STATUS.INITIAL,
-    token: null,
-  };
+  state = {};
 
   componentDidMount() {
-    const code =
-      window.location.href.match(/\?code=(.*)/) &&
-      window.location.href.match(/\?code=(.*)/)[1];
-
-    if (code) {
-      this.setState({ status: STATUS.LOADING });
-      fetch(`http://localhost:3000/authenticate/${code}`)
-        .then((response) => response.json())
-        .then(({ token }) => {
-          this.setState({
-            token,
-            status: STATUS.FINISHED_LOADING,
-          });
-        });
-    }
+    const code = window.location.href.match(/\?code=(.*)/)
+      && window.location.href.match(/\?code=(.*)/)[1];
+    this.setState({ code });
   }
 
   render() {
     const { classes } = this.props;
 
     let authenticated;
-    if (this.state.status === STATUS.AUTHENTICATED) {
+    if (this.state.code) {
       authenticated = (
         <div>
           <IconButton color="inherit">

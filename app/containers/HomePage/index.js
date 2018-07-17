@@ -21,11 +21,6 @@ export default class HomePage extends React.PureComponent { // eslint-disable-li
     return (
       <div>
         <NavBar />
-        <PageLayout
-        layout = "frontPage">
-          <News/>
-          <News/>
-        </PageLayout>
       </div>
     );
   }

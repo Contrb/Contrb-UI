@@ -8,7 +8,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import News from './news';
 import Leaderboard from './leaderboard';
 import UserStats from './userStats';
@@ -48,7 +47,7 @@ class GuttersGrid extends React.Component {
         justify="center"
         className={classes.root}
         spacing={16}
-        style={{ 'padding-top': '10px', 'padding-left': '50px', 'padding-right': '50px'}}
+        style={{ 'padding-top': '10px', 'padding-left': '50px', 'padding-right': '50px' }}
       >
         <Grid item xs={12} sm={12}>
           <Grid container justify="center" spacing={Number(spacing)}>

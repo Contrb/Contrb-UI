@@ -91,7 +91,13 @@ h1 {
 }
 .bm-menu {
   background: #373a47;
+  background: -webkit-linear-gradient(10deg, #4ac1ff, #795bb0);
+  background: -moz-linear-gradient(10deg, #4ac1ff, #795bb0);
+  background: -o-linear-gradient(10deg, #4ac1ff, #795bb0);
+  background: -ms-linear-gradient(10deg, #4ac1ff, #795bb0);
+  background: linear-gradient(10deg, #4ac1ff, #795bb0);
 }
+
 .bm-menu a {
   color: #b8b7ad;
 }
@@ -106,6 +112,19 @@ h1 {
   margin-left: 10px;
   font-weight: 700;
 }
+
+
+
+.hideMouseOver{
+  position: relative;
+  pointer-events: none;
+}
+
+.bg-overlay{
+  position:relative;
+  pointer-events: none;
+}
+
 .menu-4 .bm-cross {
   background: #888;
 }

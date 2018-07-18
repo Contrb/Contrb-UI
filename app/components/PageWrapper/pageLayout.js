@@ -5,7 +5,7 @@
 */
 
 import React from 'react';
-import News from '../News';
+import HomePage from '../HomePageComponents/homePage';
 // import styled from 'styled-components';
 
 
@@ -13,8 +13,7 @@ class PageLayout extends React.Component { // eslint-disable-line react/prefer-s
   render() {
     return (
       <div>
-        <News />
-
+        <HomePage />
       </div>
     );
   }

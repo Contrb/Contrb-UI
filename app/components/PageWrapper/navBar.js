@@ -61,7 +61,7 @@ class NavBar extends Component { // eslint-disable-line react/prefer-stateless-f
     }
 
     return (
-      <AppBar position="static" elevation={0}>
+      <AppBar position="static" elevation={0} style={{ backgroundColor: '#2196F3' }}>
         <Toolbar>
           <Typography variant="title" color="inherit" className={classes.flex}>
           </Typography>

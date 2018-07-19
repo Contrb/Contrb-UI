@@ -1,5 +1,5 @@
 .mainComponent {
-  height: 200px;
+  height: 100%;
 }
 
 #homePageGrid {
@@ -10,4 +10,8 @@
 
 .gridItem {
   width: 100%;
+}
+
+.content-element{
+  margin-top: 0px;
 }

@@ -1,0 +1,13 @@
+.mainComponent {
+  height: 200px;
+}
+
+#homePageGrid {
+  padding-top : 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.gridItem {
+  width: 100%;
+}

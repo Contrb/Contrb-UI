@@ -5,13 +5,14 @@
 */
 
 import React from 'react';
+import './news.css';
 // import styled from 'styled-components';
 
 
 class News extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
-      <div style={{ background: '#FA8072', height: '500px', color: '#FFFFFF', padding: '10px' }}>
+      <div className={'mainComponent'} id={'news'}>
         News
       </div>
     );

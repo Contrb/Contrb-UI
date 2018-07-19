@@ -8,9 +8,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import News from './news';
-import Leaderboard from './leaderboard';
-import UserStats from './userStats';
+import News from './news/news';
+import Leaderboard from './leaderboard/leaderboard';
+import UserStats from './userStats/userStats';
+import './homePage.css';
 
 
 const styles = (theme) => ({
@@ -47,22 +48,22 @@ class GuttersGrid extends React.Component {
         justify="center"
         className={classes.root}
         spacing={16}
-        style={{ 'padding-top': '10px', 'padding-left': '50px', 'padding-right': '50px' }}
+        id={'homePageGrid'}
       >
         <Grid item xs={12} sm={12}>
           <Grid container justify="center" spacing={Number(spacing)}>
             <Grid item xs={12} sm={3}>
-              <div style={{ width: '100%' }}>
+              <div className={'gridItem'}>
                 <Leaderboard />
               </div>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <div style={{ width: '100%' }}>
+              <div className={'gridItem'}>
                 <News />
               </div>
             </Grid>
             <Grid item xs={12} sm={3}>
-              <div style={{ width: '100%' }}>
+              <div className={'gridItem'}>
                 <UserStats />
               </div>
             </Grid>

@@ -31,19 +31,12 @@ const styles = (theme) => ({
 });
 
 class NavBar extends Component { // eslint-disable-line react/prefer-stateless-function
-  state = {};
-
-  componentDidMount() {
-    const code = window.location.href.match(/\?code=(.*)/)
-      && window.location.href.match(/\?code=(.*)/)[1];
-    this.setState({ code });
-  }
 
   render() {
     const { classes } = this.props;
 
     let authenticated;
-    if (this.state.code) {
+    if (localStorage.getItem('githubToken') !== 'null') {
       authenticated = (
         <div>
           <IconButton color="inherit">

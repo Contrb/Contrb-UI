@@ -16,7 +16,6 @@ import AccountCircle from '@material-ui/icons/es/AccountCircle';
 import SignIn from '../AuthButtons/signIn';
 import SignUp from '../AuthButtons/signUp';
 
-
 const styles = (theme) => ({
   root: {
     marginTop: theme.spacing.unit * 3,
@@ -61,10 +60,9 @@ class NavBar extends Component { // eslint-disable-line react/prefer-stateless-f
     }
 
     return (
-      <AppBar position="static" elevation={0}>
+      <AppBar position="static" elevation={0} style={{ background: 'linear-gradient(10deg, #4ac1ff, #795bb0)' }} >
         <Toolbar>
           <Typography variant="title" color="inherit" className={classes.flex}>
-            Contrb
           </Typography>
           <div>
             {authenticated}

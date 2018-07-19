@@ -24,12 +24,10 @@ class App extends React.Component {
   componentDidMount() {
     const code = window.location.href.match(/\?code=(.*)/)
       && window.location.href.match(/\?code=(.*)/)[1];
-    localStorage.setItem(githubToken, code);
+    if (code) {
+      localStorage.setItem(githubToken, code);
+    }
   }
-
-  logOut = () => () => {
-    localStorage.clear();
-  };
 
   render() {
     return (

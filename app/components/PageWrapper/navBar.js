@@ -36,7 +36,7 @@ class NavBar extends Component { // eslint-disable-line react/prefer-stateless-f
     const { classes } = this.props;
 
     let authenticated;
-    if (localStorage.getItem('githubToken') !== 'null') {
+    if (localStorage.getItem('githubToken')) {
       authenticated = (
         <div>
           <IconButton color="inherit">

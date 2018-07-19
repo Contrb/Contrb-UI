@@ -47,7 +47,7 @@ class GuttersGrid extends React.Component {
         container
         justify="center"
         className={classes.root}
-        spacing={16}
+        spacing={0}
         id={'homePageGrid'}
       >
         <Grid item xs={12} sm={12}>

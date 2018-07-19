@@ -17,15 +17,30 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
-function App() {
-  return (
-    <div>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route component={NotFoundPage} />
-      </Switch>
-    </div>
-  );
+const githubToken = 'githubToken';
+
+class App extends React.Component {
+
+  componentDidMount() {
+    const code = window.location.href.match(/\?code=(.*)/)
+      && window.location.href.match(/\?code=(.*)/)[1];
+    localStorage.setItem(githubToken, code);
+  }
+
+  logOut = () => () => {
+    localStorage.clear();
+  };
+
+  render() {
+    return (
+      <div>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default (App);

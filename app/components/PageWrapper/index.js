@@ -5,6 +5,7 @@
 */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { scaleDown as Menu } from 'react-burger-menu';
 
 // import styled from 'styled-components';
@@ -52,7 +53,7 @@ class PageWrapper extends React.Component { // eslint-disable-line react/prefer-
           <div onMouseMove={addGradient}>
             <NavBar />
           </div>
-          <PageLayout />
+          <PageLayout page={this.props.page} />
         </main>
       </div>
     );
@@ -60,6 +61,7 @@ class PageWrapper extends React.Component { // eslint-disable-line react/prefer-
 }
 
 PageWrapper.propTypes = {
+  page: PropTypes.string,
 
 };
 

@@ -19,7 +19,7 @@ class userStats extends React.Component { // eslint-disable-line react/prefer-st
         <div id={'userIcon'} className={'center-div'}></div>
         <div className={'mainComponent'} id={'userStats'}>
           <div id={'userInfoGrid'}>
-            <Grid container spacing={19} id={'userDataBox'}>
+            <Grid container spacing={16} id={'userDataBox'}>
 
               <Grid item xs={6} sm={6} md={6} className={'userScoreRow'}>
               User Name
@@ -30,7 +30,7 @@ class userStats extends React.Component { // eslint-disable-line react/prefer-st
             </Grid>
           </div>
           <div id={'userStatsGrid'}>
-            <Grid container spacing={19} id={''}>
+            <Grid container spacing={16} id={''}>
               <Grid item xs={3} sm={3} md={3} className={'userStatsGridItem'}>
               asdf
             </Grid>

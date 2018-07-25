@@ -5,22 +5,26 @@
 */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import HomePage from '../HomePageComponents/homePage';
-// import styled from 'styled-components';
+import Profile from '../ProfileComponents/profile';
 
+
+// import styled from 'styled-components';
 
 class PageLayout extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
-    return (
-      <div>
-        <HomePage />
-      </div>
-    );
+    if (this.props.page === 'homePage') {
+      return (<HomePage />);
+    } else if (this.props.page === 'profile') {
+      return (<Profile />);
+    }
+    return null;
   }
 }
 
 PageLayout.propTypes = {
-
+  page: PropTypes.string,
 };
 
 export default PageLayout;

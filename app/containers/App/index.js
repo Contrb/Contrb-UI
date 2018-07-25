@@ -18,7 +18,9 @@ import HomePage from 'containers/HomePage/Loadable';
 import Profile from 'containers/Profile/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
-const githubToken = 'githubToken';
+const githubCode = 'githubCode';
+const clientId = '08b484fc8205a40052b8';
+const clientSecret = '3839d27d7dcef7d9a2031de9229e9885f1b739df';
 
 class App extends React.Component {
 
@@ -26,7 +28,27 @@ class App extends React.Component {
     const code = window.location.href.match(/\?code=(.*)/)
       && window.location.href.match(/\?code=(.*)/)[1];
     if (code) {
-      localStorage.setItem(githubToken, code);
+      localStorage.setItem(githubCode, code);
+
+      const url = 'https://github.com/login/oauth/access_token';
+      const data = new FormData();
+      data.append('client_id', clientId);
+      data.append('client_secret', clientSecret);
+      data.append('code', code);
+
+      fetch(url, {
+        method: 'POST',
+        body: data,
+      }).then((response) => {
+        console.log('cunt');
+        return response.text();
+      })
+        .then((paramsString) => {
+          const params = new URLSearchParams(paramsString);
+          console.log('access_token', params.get('access_token'));
+        }).catch((e) => {
+          console.log(e);
+        });
     }
   }
 

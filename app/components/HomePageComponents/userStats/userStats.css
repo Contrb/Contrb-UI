@@ -2,5 +2,70 @@
   background: #FA8072;
   color: #FFFFFF;
   padding: 10px;
+  z-index: 0;
+  margin-top: -80px;
+  position: relative;
+  border-top-right-radius: 25px;
 
+
+}
+
+#userIcon {
+  background: deeppink;
+  padding: 10px;
+  height: 150px;
+  width: 150px;
+  z-index: 1;
+  border-radius: 50%;
+  margin-top: -140px;
+  position: relative;
+
+}
+
+#userCenterIcon {
+  background: white;
+  padding: 10px;
+  height: 130px;
+  width: 130px;
+  z-index: 2;
+  border-radius: 50%;
+  position: relative;
+}
+
+#mainPanel {
+  padding-top: 10px;
+}
+
+#userDataBox{
+  padding-top: 75px;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.center-div
+{
+  margin: 0 auto;
+  width: 100px;
+}
+
+.gridItem {
+  width: 100%;
+}
+
+#userInfoGrid {
+  padding-bottom: 20px;
+  border-bottom: 1px solid yellow;
+}
+#userStatsGrid{
+  padding-top: 20px;
+}
+
+.userStatsGridItem{
+  padding-bottom: 20px;
 }

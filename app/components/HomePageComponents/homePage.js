@@ -52,17 +52,17 @@ class GuttersGrid extends React.Component {
       >
         <Grid item xs={12} sm={12}>
           <Grid container justify="center" spacing={Number(spacing)}>
-            <Grid item xs={12} sm={3}>
-              <div className={'gridItem'}>
+            <Grid item xs={12} sm={4} md={3}>
+              <div className={'gridItem, content-element'}>
                 <Leaderboard />
               </div>
             </Grid>
-            <Grid item xs={12} sm={6}>
-              <div className={'gridItem'}>
+            <Grid item xs={12} sm={5} md={6}>
+              <div className={'gridItem, content-element'}>
                 <News />
               </div>
             </Grid>
-            <Grid item xs={12} sm={3}>
+            <Grid item xs={12} sm={3} md={3}>
               <div className={'gridItem'}>
                 <UserStats />
               </div>

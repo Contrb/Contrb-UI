@@ -15,6 +15,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
+import Profile from 'containers/Profile/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 const githubToken = 'githubToken';
@@ -33,7 +34,8 @@ class App extends React.Component {
     return (
       <div>
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path={'/'} component={HomePage} />
+          <Route exact path={'/profile'} component={Profile} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>
